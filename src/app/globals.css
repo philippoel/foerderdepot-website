@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Design förderdepot.com: Pflaume und Gold, weiche runde Formen, Schrift Outfit.
+   Bewusst anders als justavd.de (Papier, Orange, Serifen, eckig). */
+@theme {
+  --font-sans: var(--font-outfit), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-grund: #fbf9fd;
+  --color-flaeche: #f3edf8;     /* helle Flächen */
+  --color-linie: #e4dbec;
+  --color-tinte: #2b1a3a;       /* Überschriften */
+  --color-text: #43344f;        /* Fließtext (10:1) */
+  --color-leise: #6a5a77;       /* Nebentext (5,8:1) */
+  --color-akzent: #6b2f8a;      /* Knöpfe, Links (weiße Schrift 8,6:1) */
+  --color-akzent-dunkel: #521f6c;
+  --color-gold: #e2a724;        /* Zulagen, Schmuck */
+  --color-gold-hell: #fdf3dc;
+  --color-gold-dunkel: #7a5000; /* Gold als Text (7:1) */
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--color-grund); color: var(--color-text); }
+
+@layer base {
+  h1, h2, h3 { color: var(--color-tinte); text-wrap: balance; letter-spacing: -0.015em; }
+  p { text-wrap: pretty; }
+}
+table, .zahl { font-variant-numeric: tabular-nums; }
+::selection { background: var(--color-gold-hell); color: var(--color-tinte); }
+:focus-visible { outline: 2px solid var(--color-akzent); outline-offset: 3px; border-radius: 0.75rem; }
+input[type="range"] { accent-color: var(--color-akzent); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
